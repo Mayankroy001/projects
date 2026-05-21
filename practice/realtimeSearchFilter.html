@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+    }
+
+    #main {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(29, 29, 29);
+    }
+
+    input {
+        position: relative;
+        padding: 20px;
+        margin-bottom: 14px;
+        border-radius: 10px;
+        color: black;
+        border: 2px solid green;
+
+    }
+
+.card {
+            background-color: #222; /* Dark background for the card */
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 400px;
+            width: 100%;
+            display: flex; /* FIXED: Changed from inline to flex */
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        .img{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: aliceblue;
+            margin-bottom: 14px;
+        }
+
+        
+</style>
+
+<body>
+    <div id="main">
+        <input type="text" placeholder="search users..">
+
+        <div class="card">
+            <div class="img">
+                <img src="" alt="">
+            </div>
+            <h2>Mayank</h2>
+            <h3>Software Engineer</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet possimus qui sequi. Sapiente, ut possimus
+                architecto deserunt repudiandae, eligendi impedit nostrum sequi reprehenderit ab porro ipsam aperiam
+                voluptate at dolorem.</p>
+        </div>
+    </div>
+</body>
+
+</html>
