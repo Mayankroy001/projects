@@ -1,83 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+    <title>Dynamic User Search</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    html,
-    body {
-        width: 100%;
-        height: 100%;
-    }
+        html, body {
+            width: 100%;
+            min-height: 100%;
+            background-color: rgb(29, 29, 29);
+            font-family: sans-serif;
+        }
 
-    #main {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: rgb(29, 29, 29);
-    }
+        /* Container wrapper for search + layout layout */
+        .search-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
 
-    input {
-        position: relative;
-        padding: 20px;
-        margin-bottom: 14px;
-        border-radius: 10px;
-        color: black;
-        border: 2px solid green;
+        input {
+            width: 100%;
+            max-width: 400px;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            color: black;
+            border: 2px solid green;
+            outline: none;
+            font-size: 16px;
+        }
 
-    }
+        /* Container where cards are injected */
+        #main {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-wrap: wrap; /* Allows multiple cards to sit side-by-side if they fit */
+            gap: 20px;
+            justify-content: center;
+            align-items: flex-start;
+        }
 
-.card {
-            background-color: #222; /* Dark background for the card */
+        .card {
+            background-color: #222; 
             color: white;
             padding: 30px;
             border-radius: 15px;
-            max-width: 400px;
+            max-width: 350px;
             width: 100%;
-            display: flex; /* FIXED: Changed from inline to flex */
+            display: flex; 
             flex-direction: column;
             align-items: center;
             text-align: center;
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
-        .img{
-            width: 200px;
-            height: 200px;
+
+        .profile {
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             background-color: aliceblue;
             margin-bottom: 14px;
+            overflow: hidden;
         }
 
-        
-</style>
+        .profile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
+        h2 { margin-bottom: 5px; font-size: 24px; }
+        h3 { margin-bottom: 15px; color: #888; font-size: 16px; font-weight: 400; }
+        p { font-size: 14px; line-height: 1.5; color: #bbb; }
+    </style>
+</head>
 <body>
-    <div id="main">
-        <input type="text" placeholder="search users..">
 
-        <div class="card">
-            <div class="img">
-                <img src="" alt="">
-            </div>
-            <h2>Mayank</h2>
-            <h3>Software Engineer</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet possimus qui sequi. Sapiente, ut possimus
-                architecto deserunt repudiandae, eligendi impedit nostrum sequi reprehenderit ab porro ipsam aperiam
-                voluptate at dolorem.</p>
-        </div>
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search users by name...">
+        
+        <div id="main"></div>
     </div>
-</body>
 
+    <script src="realtimeSearchFilter.js"></script>
+</body>
 </html>
